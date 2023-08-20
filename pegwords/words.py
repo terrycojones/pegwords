@@ -19,8 +19,8 @@ DIGIT_REGEXPS = [
         "l+",
         "(j|sh|ch|cz|g(?=e))",
         "(kn?|c[aoku]|g(?!e)?|q|[aeiou]ck?$|c(?=[lnrst])?)",
-        "[f|v]+",
-        "[b|p]",
+        "(f|ph|v)+",
+        "(b|p(?!h))",
     )
 ]
 

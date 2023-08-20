@@ -41,6 +41,10 @@ def testThrush():
     assert wordToDigits("thrush") == "46"
 
 
+def testHemophobia():
+    assert wordToDigits("hemophobia") == "389"
+
+
 def testPthenB():
     "P then B should be counted as two sounds."
     assert wordToDigits("hipbone") == "992"
