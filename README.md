@@ -19,11 +19,13 @@ This is interactive. Try it on the first 50 digits of Pi:
 $ ./digits-to-words.py 1415926535897932384626433832795028841971693993751
 ```
 
-The program will read `/usr/share/dict/web2` and then prompt you to pick
-one word at a time to build a sequence of words matching the given
-digits. At each step you can type:
+The program will read `/usr/share/dict/web2` (or pass a dictionary file
+using `--dictionaryFile`) and will then prompt you to pick one word at a
+time to build a sequence of words matching the given string of digits.
 
-* A number to choose your next word.
+At each step you can type:
+
+* A number to choose your next word from the current list of candidates.
 * `?` to see the current list.
 * `-` to make the matched prefix one character shorter (= more words to choose from).
 * `+` to make the matched prefix one character longer (= fewer words to choose from).
