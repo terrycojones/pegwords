@@ -1,4 +1,4 @@
-## Pegwords
+# Pegwords
 
 I read Harry Lorayne's book [How to Develop a Super Power
 Memory](https://www.amazon.com/How-Develop-Super-Power-Memory/dp/0811901815)
@@ -9,17 +9,17 @@ therein.
 Last night I decided to write a couple of quick scripts to make it easy to
 pick a sequence of long words to memorize.
 
-### Installation
+## Installation
 
 ```sh
 $ pip install pegwords
 ```
 
-### Usage
+## Usage
 
 There are two scripts here:
 
-#### Making a list of words given a sequence of digits
+### Making a list of words given a sequence of digits
 
 This is interactive. Try it on the first 50 digits of Pi:
 
@@ -39,7 +39,7 @@ At each step you can type:
 * `+` to make the matched prefix one character longer (= fewer words to choose from).
 * `q` to quit.
 
-#### Getting the sequence of digits for a list of words
+### Getting the sequence of digits for a list of words
 
 Simpler is going the other way:
 
@@ -63,3 +63,33 @@ EXPECTED: 5456
 RECEIVED: 5451
 For word 'world', expected '456' but the correct value is '451'.
 ```
+
+## Notes
+
+### Tests
+
+To run the tests, make sure you have `pytest` installed, then:
+
+```sh
+$ make test
+```
+
+### Accuracy
+
+The method of converting words to digit sequences is crude, using simple
+regular expressions. It will for sure make mistakes.
+
+If you see something wrong, the easiest way to begin to find the cause will
+be to add a test to `test/test_words.py`. Just do something like this:
+
+```python
+def testWhale():
+    assert wordToDigits("whale", verbose=True) == "5"
+```
+
+This will cause debugging output to be printed, allowing you to (hopefully)
+figure out which regular expression matched (or didn't) and why you're
+seeing the result you see.
+
+Maybe you can then fix it and send a pull request, or open a GitHub issue
+with the failing test, etc.
