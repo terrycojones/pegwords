@@ -21,10 +21,15 @@ There are two scripts here:
 
 ### Making a list of words given a sequence of digits
 
-This is interactive. Try it on the first 50 digits of Pi:
+To memorize a number, you need to convert it to a sequence of memorable
+words to be visualized. Sequences can be constructed using
+`digits-to-words.py`.
+
+The script is interactive. Here's how to try it out on the first 50 decmial
+places of Pi:
 
 ```sh
-$ ./digits-to-words.py 1415926535897932384626433832795028841971693993751
+$ ./digits-to-words.py 14159265358979323846264338327950288419716939937510
 ```
 
 The program will read `/usr/share/dict/web2` (or pass a dictionary file
@@ -41,7 +46,8 @@ At each step you can type:
 
 ### Getting the sequence of digits for a list of words
 
-Simpler is going the other way:
+Simpler is to go the other way, converting a sequence of words into their
+corresponding digits:
 
 ```sh
 $ ./words-to-digits.py hello world
@@ -50,7 +56,7 @@ $ ./words-to-digits.py hello world
   WORDS:  hello world
 ```
 
-And if you want to check a sequence of words has the expected digit sequence:
+You can also check if a sequence of words has the expected digit sequence:
 
 ```
 $ ./words-to-digits.py --expected 5456 hello world
@@ -63,6 +69,10 @@ EXPECTED: 5456
 RECEIVED: 5451
 For word 'world', expected '456' but the correct value is '451'.
 ```
+
+The output shows you the mismatch (or mismatches) in digit sequences and
+also the corresponding words. If the expected value correctly matches the
+computed value, nothing is is printed.
 
 ## Notes
 

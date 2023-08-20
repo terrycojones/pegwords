@@ -54,13 +54,15 @@ def main():
     for inputWord in args.words:
         wordList.append((inputWord, words.wordToDigits(inputWord)))
 
-    printResult(wordList, "")
-
     if args.expected:
+        # Note that we don't print any result if an expected sequence is
+        # given and it is correct. We just (silently) confirm that it's right.
         result = "".join(digits for (_, digits) in wordList)
         if result != args.expected:
             printError(args.expected, result, wordList)
             sys.exit(1)
+    else:
+        printResult(wordList, "")
 
 
 if __name__ == "__main__":
