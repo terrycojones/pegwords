@@ -9,9 +9,17 @@ therein.
 Last night I decided to write a couple of quick scripts to make it easy to
 pick a sequence of long words to memorize.
 
+### Installation
+
+```sh
+$ pip install pegwords
+```
+
+### Usage
+
 There are two scripts here:
 
-### Making a list of words given a sequence of digits
+#### Making a list of words given a sequence of digits
 
 This is interactive. Try it on the first 50 digits of Pi:
 
@@ -31,7 +39,7 @@ At each step you can type:
 * `+` to make the matched prefix one character longer (= fewer words to choose from).
 * `q` to quit.
 
-### Getting the sequence of digits for a list of words
+#### Getting the sequence of digits for a list of words
 
 Simpler is going the other way:
 
